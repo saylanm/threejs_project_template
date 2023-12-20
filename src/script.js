@@ -29,10 +29,10 @@ function changeColor(color) {
   renderer.render(scene, camera);
 }
 
-const colorButton = document.getElementById('color-button');
-colorButton.addEventListener('click', () => {
-  const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
-  changeColor(randomColor);
+const colorPicker = document.getElementById('color-picker');
+colorPicker.addEventListener('input', (event) => {
+  const chosenColor = new THREE.Color(event.target.value);
+  changeColor(chosenColor);
 });
 
 window.addEventListener('resize', () => {
